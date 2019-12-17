@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>@niteshpurohit/ngx-stripe</span>
+    <span class="fill-space"></span>
+    <a mat-button href="https://github.com/niteshpurohit/ngx-stripe" target="_blank">
+      <mat-icon fontSet="mdi" fontIcon="mdi-github-box"></mat-icon>
+      Github
+    </a>
+    <a mat-button href="api" target="_blank">
+      <mat-icon fontSet="mdi" fontIcon="mdi-file-document"></mat-icon>
+      Documentation
+    </a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+  <mat-card>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Stripe Test Key" [formControl]="stripeKey" (blur)="keyUpdated()" >
+      <mat-error *ngIf="stripeKey.invalid">{{keyError}}</mat-error>
+    </mat-form-field>
+
+    <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions" (change)="cardUpdated($event)" (error)="error = $event"></ngx-stripe-card>
+    <mat-error>
+      {{error?.message}}
+    </mat-error>
+    <button mat-raised-button (click)="getCardToken()" color="primary" [disabled]="!complete">Get Card Token</button>
+
+
+    <ngx-stripe-card [elementTypes]="['cardNumber', 'cardExpiry', 'cardCvc', 'postalCode']" [options]="cardOptions" [elementsOptions]="elementsOptions" (change)="cardUpdated2($event)" (error)="error = $event"></ngx-stripe-card>
+    <button mat-raised-button (click)="getCardToken()" color="primary" [disabled]="!complete2">Get Card Token</button>
+
+    <br/>
+
+    Pay: <mat-slider min="1" max="100" step="10" thumbLabel [value]="pay" (valueChange)="updatePay($event)"></mat-slider>
+    <ngx-payment-request
+      [options]="requestOptions"
+      [elementsOptions]="elementsOptions"
+      [styles]="styles"
+      (shippingAddressChange)="updateShippingAddress($event)"
+      (shippingOptionChange)="updateShippingOption($event)"
+      (change)="requestUpdated($event)">
+    </ngx-payment-request>
+
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title-group>
+        <mat-card-title>Token</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+      <pre>
+        {{token | json}}
+      </pre>
+    </mat-card-content>
+  </mat-card>
+</div>

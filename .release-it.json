@@ -1,0 +1,22 @@
+{
+  "non-interactive": true,
+  "hooks": {
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
+    "after:bump": [
+      "npm run build:release",
+      "npx auto-changelog -p"
+    ]
+  },
+  "git.requireCleanWorkingDir": false,
+  "npm": {
+    "publishPath": "./dist/ngx-stripe"
+  },
+  "github": {
+    "release": false
+  },
+  "prompt": {
+    "src": {
+      "github": false
+    }
+  }
+}

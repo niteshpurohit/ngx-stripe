@@ -1,0 +1,96 @@
+{
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "name": "@niteshpurohit/ngx-stripe",
+  "version": "1.2.2",
+  "description": "@angular wrapper for StripeJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niteshpurohit/ngx-stripe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niteshpurohit/ngx-stripe/issues"
+  },
+  "homepage": "https://github.com/niteshpurohit/ngx-stripe",
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build:release": "ng-packagr -p package.json",
+    "release": "release-it",
+    "release:major": "npm run release -- major -n",
+    "release:minor": "npm run release -- minor -n",
+    "release:patch": "npm run release -- patch -n",
+    "compodoc": "compodoc -p tsconfig.json",
+    "compodoc:serve": "compodoc -p tsconfig.json -sw",
+    "compodoc:watch": "compodoc -p tsconfig.json -w",
+    "docs": "npm-run-all -s compodoc:serve",
+    "docs:watch": "npm-run-all -p compodoc:serve compodoc:watch",
+    "docs:publish": "run-s demo:aot:yalc && bash deploy-docs.sh",
+    "doctoc": "doctoc README.md --maxlevel 3"
+  },
+  "peerDependencies": {
+    "@angular/common": "~8.2.9",
+    "@angular/core": "~8.2.9"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.8",
+    "@angular/animations": "~8.2.9",
+    "@angular/cdk": "^8.2.2",
+    "@angular/cli": "~8.3.8",
+    "@angular/common": "~8.2.9",
+    "@angular/compiler": "~8.2.9",
+    "@angular/compiler-cli": "~8.2.9",
+    "@angular/core": "~8.2.9",
+    "@angular/forms": "~8.2.9",
+    "@angular/language-service": "~8.2.9",
+    "@angular/material": "^8.2.2",
+    "@angular/platform-browser": "~8.2.9",
+    "@angular/platform-browser-dynamic": "~8.2.9",
+    "@angular/router": "~8.2.9",
+    "@compodoc/compodoc": "^1.1.10",
+    "@types/jasmine": "~3.4.2",
+    "@types/jasminewd2": "~2.0.8",
+    "@types/node": "~12.7.11",
+    "auto-changelog": "^1.16.1",
+    "codelyzer": "~5.1.2",
+    "core-js": "^3.2.1",
+    "doctoc": "^1.4.0",
+    "fstream": "^1.0.12",
+    "hammerjs": "^2.0.8",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "js-yaml": "^3.13.1",
+    "karma": "~4.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "mdi": "^2.2.43",
+    "ng-packagr": "^5.5.1",
+    "npm-run-all": "^4.1.5",
+    "protractor": "~5.4.2",
+    "release-it": "^12.4.2",
+    "rxjs": "~6.5.3",
+    "ts-node": "~8.4.1",
+    "tslib": "^1.10.0",
+    "tslint": "~5.20.0",
+    "typescript": "~3.5.3",
+    "zone.js": "~0.10.2"
+  },
+  "ngPackage": {
+    "dest": "dist/ngx-stripe",
+    "lib": {
+      "entryFile": "projects/ngx-stripe/src/public_api.ts"
+    }
+  }
+}
