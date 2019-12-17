@@ -3,6 +3,9 @@
   "name": "@niteshpurohit/ngx-stripe",
   "version": "1.2.2",
   "description": "@angular wrapper for StripeJS",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/niteshpurohit/ngx-stripe.git"
