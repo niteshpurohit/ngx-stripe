@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@niteshpurohit/ngx-stripe",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "@angular wrapper for StripeJS",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -43,7 +43,7 @@
   "peerDependencies": {},
   "dependencies": {
     "tslib": "^1.10.0"
-},
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.1",
     "@angular/animations": "~9.0.0",
