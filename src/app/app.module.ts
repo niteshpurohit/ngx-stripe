@@ -10,7 +10,7 @@ import {
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxStripeModule } from '@niteshpurohit/ngx-stripe';
+import { NgxStripeModule } from '@niteshp/ngx-stripe';
 import { AppComponent } from './app.component';
 
 @NgModule({

@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [@niteshpurohit/ngx-stripe](#niteshpurohitngx-stripe)
+- [@niteshp/ngx-stripe](#niteshpurohitngx-stripe)
   - [Features](#features)
   - [Installation](#installation)
   - [Using the library](#using-the-library)
@@ -19,10 +19,10 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# @niteshpurohit/ngx-stripe
+# @niteshp/ngx-stripe
 
-[![version](https://img.shields.io/npm/v/ngx-stripe.svg)](https://www.npmjs.com/package/@niteshpurohit/ngx-stripe)
-[![license](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/@niteshpurohit/ngx-stripe)
+[![version](https://img.shields.io/npm/v/ngx-stripe.svg)](https://www.npmjs.com/package/@niteshp/ngx-stripe)
+[![license](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/@niteshp/ngx-stripe)
 
 @angular wrapper for StripeJS based on module by Ricardo Sánchez Gregorio at https://github.com/richnologies/ngx-stripe
 
@@ -40,9 +40,9 @@ _Note: This version is designed to work with angular v8+ only_
 To install this library, run:
 
 ```bash
-$ npm install @niteshpurohit/ngx-stripe --save
+$ npm install @niteshp/ngx-stripe --save
 or
-$ yarn add @niteshpurohit/ngx-stripe
+$ yarn add @niteshp/ngx-stripe
 ```
 
 ## Using the library
@@ -63,7 +63,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { NgxStripeModule } from '@niteshpurohit/ngx-stripe';
+import { NgxStripeModule } from '@niteshp/ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -105,7 +105,7 @@ by using a ViewChild, the public method getCard()
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshpurohit/ngx-stripe";
+import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshp/ngx-stripe";
 
 
 @Component({
@@ -337,7 +337,7 @@ Example:
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshpurohit/ngx-stripe";
+import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshp/ngx-stripe";
 
 
 @Component({
@@ -430,7 +430,7 @@ yarn publish:dev
 ```
 You can then run the following to install it in an app to test it:
 ```Shell
-yalc link @niteshpurohit/ngx-stripe
+yalc link @niteshp/ngx-stripe
 ```
 
 ## Publishing

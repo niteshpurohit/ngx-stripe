@@ -5,7 +5,7 @@ import {
   ElementOptions,
   ElementsOptions,
   StripeService
-} from '@niteshpurohit/ngx-stripe';
+} from '@niteshp/ngx-stripe';
 import { PaymentRequestButtonStyle, RequestElementOptions } from 'projects/ngx-stripe/src/lib/interfaces/element';
 import { environment } from 'src/environments/environment';
 

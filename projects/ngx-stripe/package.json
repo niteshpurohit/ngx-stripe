@@ -1,5 +1,5 @@
 {
-  "name": "@niteshpurohit/ngx-stripe",
+  "name": "@niteshp/ngx-stripe",
   "version": "1.2.2",
   "description": "@angular wrapper for StripeJS",
   "repository": {

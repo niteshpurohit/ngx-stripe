@@ -18,7 +18,7 @@
       "dom"
     ],
     "paths": {
-      "@niteshpurohit/ngx-stripe": [
+      "@niteshp/ngx-stripe": [
         "projects/ngx-stripe/src/lib"
       ]
     }
