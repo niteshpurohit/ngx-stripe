@@ -105,8 +105,7 @@ by using a ViewChild, the public method getCard()
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshp/ngx-stripe";
-
+import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions, Element as StripeElement  } from "@niteshp/ngx-stripe";
 
 @Component({
   selector: 'app-stripe-test',
@@ -337,8 +336,7 @@ Example:
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
-import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from "@niteshp/ngx-stripe";
-
+import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions, Element as StripeElement } from "@niteshp/ngx-stripe";
 
 @Component({
   selector: 'app-stripe-test',
