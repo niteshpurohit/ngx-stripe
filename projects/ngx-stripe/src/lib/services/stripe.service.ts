@@ -9,9 +9,7 @@ import {
   BankAccount,
   BankAccountData,
   CardDataOptions,
-  CardPaymentData,
-  ConfirmIntentData,
-  PaymentMethodData,
+  HandleCardPaymentData,
   ConfirmSetupIntentData,
   isBankAccount,
   isBankAccountData,
@@ -22,7 +20,7 @@ import {
   PiiData,
   SetupIntentData,
   SetupIntentResult,
-  TokenResult
+  TokenResult,
 } from '../interfaces/token';
 import { LazyStripeAPILoader, Status } from './api-loader.service';
 import { PlatformService } from './platform.service';
@@ -42,7 +40,7 @@ export class StripeService {
   ) {
     this.changeKey(this.key, this.options)
       .pipe(take(1))
-      .subscribe(() => { });
+      .subscribe(() => {});
   }
 
   public changeKey(key: string, options?: Options): Observable<StripeJS | undefined> {
@@ -97,24 +95,14 @@ export class StripeService {
 
   public handleCardPayment(
     clientSecret: string,
-    element: Element,
-    cardSetupOptions?: CardPaymentData | undefined
+    data?: HandleCardPaymentData | undefined,
+    options?: any
   ): Observable<PaymentIntentResult> {
-    return observableFrom(this.stripe.handleCardPayment(clientSecret, element, cardSetupOptions));
+    return observableFrom(this.stripe.handleCardPayment(clientSecret, data, options));
   }
 
   public handleCardAction(clientSecret: string): Observable<PaymentIntentResult> {
     return observableFrom(this.stripe.handleCardAction(clientSecret));
-  }
-  public confirmCardPayment(clientSecret: string, payment_method: PaymentMethodData): Observable<SetupIntentResult> {
-    return observableFrom(this.stripe.confirmCardPayment(clientSecret, payment_method));
-  }
-  public confirmPaymentIntent(
-    clientSecret: string,
-    element: Element,
-    intentOptions?: ConfirmIntentData | undefined
-  ): Observable<SetupIntentResult> {
-    return observableFrom(this.stripe.confirmPaymentIntent(clientSecret, element, intentOptions));
   }
 
   public retrievePaymentIntent(clientSecret: string): Observable<PaymentIntentResult> {

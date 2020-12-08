@@ -6,15 +6,13 @@ import {
   BankAccount,
   BankAccountData,
   CardDataOptions,
-  CardPaymentData,
-  ConfirmIntentData,
   ConfirmSetupIntentData,
   Pii,
   PiiData,
   SetupIntentData,
   SetupIntentResult,
   TokenResult,
-  PaymentMethodData
+  HandleCardPaymentData,
 } from './token';
 
 export const STRIPE_PUBLISHABLE_KEY = new InjectionToken<string>('Stripe Publishable Key');
@@ -30,9 +28,7 @@ export interface StripeJS {
   paymentRequest(options: RequestElementOptions);
   handleCardSetup(clientSecret: string, el: Element, cardSetupOptions?: SetupIntentData): Promise<SetupIntentResult>;
   handleCardAction(clientSecret: string);
-  handleCardPayment(clientSecret: string, el: Element, data: CardPaymentData);
-  confirmCardPayment(clientSecret: string, payment_method: PaymentMethodData);
-  confirmPaymentIntent(clientSecret: string, el: Element, data: ConfirmIntentData);
+  handleCardPayment(clientSecret: string, data: HandleCardPaymentData, options: any);
   retrievePaymentIntent(clientSecret: string);
   confirmSetupIntent(clientSecret: string, el: Element, data: ConfirmSetupIntentData);
   retrieveSetupIntent(clientSecret: string);

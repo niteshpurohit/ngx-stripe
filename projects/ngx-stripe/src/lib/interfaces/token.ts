@@ -130,12 +130,12 @@ export interface SetupIntent {
   payment_method?: string;
   payment_method_options?: { [key: string]: any };
   status:
-  | 'requires_payment_method'
-  | 'requires_confirmation'
-  | 'requires_action'
-  | 'processing'
-  | 'canceled'
-  | 'succeeded';
+    | 'requires_payment_method'
+    | 'requires_confirmation'
+    | 'requires_action'
+    | 'processing'
+    | 'canceled'
+    | 'succeeded';
   usage: 'on_session' | 'off_session';
 }
 
@@ -155,18 +155,6 @@ export interface BillingDetails {
   email?: string;
   name?: string;
   phone?: string;
-}
-export interface PaymentMethodData {
-  payment_method: string;
-}
-export interface ConfirmIntentData {
-  payment_method_data?: {
-    billing_details?: BillingDetails;
-    return_url?: string;
-    shipping?: Shipping;
-    save_payment_method?: boolean;
-    setup_future_usage?: string;
-  };
 }
 
 export interface Shipping {
@@ -259,13 +247,13 @@ export interface PaymentIntent {
   statement_descriptor?: string;
   statement_descriptor_suffix?: string;
   status:
-  | 'requires_payment_method'
-  | 'requires_confirmation'
-  | 'requires_action'
-  | 'processing'
-  | 'requires_capture'
-  | 'canceled'
-  | 'succeeded';
+    | 'requires_payment_method'
+    | 'requires_confirmation'
+    | 'requires_action'
+    | 'processing'
+    | 'requires_capture'
+    | 'canceled'
+    | 'succeeded';
   transfer_data?: any;
   transfer_group?: string;
 }
@@ -275,12 +263,11 @@ export interface PaymentIntentResult {
   error?: Error;
 }
 
-export interface CardPaymentData {
-  payment_method_data?: {
-    billing_details?: BillingDetails;
-  };
-  shipping?: Shipping;
-  receipt_email?: string;
-  save_payment_method?: boolean;
-  setup_future_usage?: string;
+export interface PaymentMethodOptions {
+  card: Element;
+  billing_detail: BillingDetails;
+}
+
+export interface HandleCardPaymentData {
+  payment_method: string | PaymentMethodOptions;
 }
