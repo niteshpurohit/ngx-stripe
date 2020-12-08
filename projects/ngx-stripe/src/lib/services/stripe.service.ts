@@ -9,7 +9,7 @@ import {
   BankAccount,
   BankAccountData,
   CardDataOptions,
-  HandleCardPaymentData,
+  HandleCardPaymentOptions,
   ConfirmSetupIntentData,
   isBankAccount,
   isBankAccountData,
@@ -95,7 +95,7 @@ export class StripeService {
 
   public handleCardPayment(
     clientSecret: string,
-    data?: HandleCardPaymentData | undefined,
+    data?: HandleCardPaymentOptions | undefined,
     options?: any
   ): Observable<PaymentIntentResult> {
     return observableFrom(this.stripe.handleCardPayment(clientSecret, data, options));

@@ -264,10 +264,12 @@ export interface PaymentIntentResult {
 }
 
 export interface PaymentMethodOptions {
-  card: Element;
-  billing_detail: BillingDetails;
+  card?: Element;
+  billing_detail?: BillingDetails;
+  setup_future_usage?: string;
+  payment_method_options?: any;
 }
 
-export interface HandleCardPaymentData {
+export interface HandleCardPaymentOptions {
   payment_method: string | PaymentMethodOptions;
 }
